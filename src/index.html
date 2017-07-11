@@ -1,0 +1,63 @@
+{% extends 'layout/base.html' %}
+
+{% from "components/Layout/Layout.html" import Layout %}
+{% from "components/Layout/Layout.Row.html" import LayoutRow %}
+{% from "components/Layout/Layout.Container.html" import LayoutContainer %}
+{% from "components/Grid/Grid.html" import Grid %}
+{% from "components/Heading/Heading.html" import Heading %}
+{% from "components/Panel/Panel.html" import Panel %}
+{% from "components/Paragraph/Paragraph.html" import Paragraph %}
+{% from "components/Media/Media.html" import Media %}
+
+{% set page_title = 'Home' %}
+
+{% block content %}
+
+  {% call Layout() %}
+
+    {% call LayoutRow(type='neutral') %}
+
+      {% call LayoutContainer() %}
+
+        {% call Grid(columns='8') %}
+
+          {% call Heading(element='h1', size='large') %}Flat North{% endcall %}
+          {% call Paragraph(type='large') %}We make WordPress products.{% endcall %}
+
+        {% endcall %}
+
+      {% endcall %}
+
+    {% endcall %}
+
+    {% call LayoutContainer() %}
+
+          {% call Paragraph(type='large') %}We are working on WooReport. A WooCommerce plug-in that sends sales information to Slack. Sign up for our newsletter so we can let you know when it's ready for launch.{% endcall %}
+
+          <!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="//flatnorth.us16.list-manage.com/subscribe/post?u=4704bb566311cab39d9a97ab4&amp;id=08d317039a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+<div class="mc-field-group">
+	<label class="c-form-field__label" for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input class="c-form-field" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4704bb566311cab39d9a97ab4_08d317039a" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="c-button c-button--primary" style="margin-top: 1rem"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+
+    {% endcall %}
+
+  {% endcall %}
+
+{% endblock %}
