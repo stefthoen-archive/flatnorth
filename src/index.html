@@ -4,10 +4,12 @@
 {% from "components/Layout/Layout.Row.html" import LayoutRow %}
 {% from "components/Layout/Layout.Container.html" import LayoutContainer %}
 {% from "components/Grid/Grid.html" import Grid %}
+{% from "components/GridItem/GridItem.html" import GridItem %}
 {% from "components/Heading/Heading.html" import Heading %}
 {% from "components/Panel/Panel.html" import Panel %}
 {% from "components/Paragraph/Paragraph.html" import Paragraph %}
-{% from "components/Media/Media.html" import Media %}
+{% from "components/List/List.html" import List %}
+{% from "components/List/List.Item.html" import ListItem %}
 
 {% set page_title = 'Home' %}
 
@@ -22,7 +24,7 @@
         {% call Grid(columns='8') %}
 
           {% call Heading(element='h1', size='large') %}Flat North{% endcall %}
-          {% call Paragraph(type='large') %}We make WordPress products.{% endcall %}
+          {% call Paragraph(type='large') %}We make WordPress products{% endcall %}
 
         {% endcall %}
 
@@ -30,9 +32,27 @@
 
     {% endcall %}
 
-    {% call LayoutContainer() %}
+    {% call LayoutRow(type='line') %}
+      {% call LayoutContainer() %}
 
-          {% call Paragraph(type='large') %}We are working on WooReport. A WooCommerce plug-in that sends sales information to Slack. Sign up for our newsletter so we can let you know when it's ready for launch.{% endcall %}
+      {% call Paragraph(type='large') %}We are working on <strong>WooReport</strong>. A <em>WooCommerce</em> plug-in that sends sale notifications to <em>Slack</em>.{% endcall %}
+
+        {% call List() %}
+          {% call ListItem() %}It tells you when you sell something{% endcall %}
+          {% call ListItem() %}It gives you daily, weekly or monthly updates of the money you're making and the products you're selling{% endcall %}
+          {% call ListItem() %}It lets you know when somebody cancels an order{% endcall %}
+          {% call ListItem() %}It tells you know a new user has signed up{% endcall %}
+          {% call ListItem() %}And a whole bunch of other stuff ...{% endcall %}
+        {% endcall %}
+
+      {% endcall %}
+
+    {% endcall %}
+
+    {% call LayoutRow(type='line') %}
+      {% call LayoutContainer() %}
+
+        {% call Paragraph(type='large') %}Sign up and we'll let you know when it's ready for launch.{% endcall %}
 
           <!-- Begin MailChimp Signup Form -->
 <div id="mc_embed_signup">
@@ -49,13 +69,33 @@
 		<div class="response" id="mce-success-response" style="display:none"></div>
 	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4704bb566311cab39d9a97ab4_08d317039a" tabindex="-1" value=""></div>
-    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="c-button c-button--primary" style="margin-top: 1rem"></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="c-button c-button--primary" style="margin-top: 1rem; margin-bottom: 1rem;"></div>
     </div>
 </form>
 </div>
 
 <!--End mc_embed_signup-->
 
+      {% endcall %}
+
+    {% endcall %}
+
+    {% call LayoutRow() %}
+      {% call LayoutContainer() %}
+
+        {% call Grid(type='halves') %}
+
+          {% call GridItem() %}
+          {% call Paragraph(type='small') %}Twitter: <a href="https://twitter.com/flatnrth">@flatnrth</a>{% endcall %}
+          {% endcall %}
+
+          {% call GridItem() %}
+            {% call Paragraph(type='small') %}Please <a href="mailto:hello@flatnorth.com">let us know</a> if you want to be a beta tester.{% endcall %}
+          {% endcall %}
+
+        {% endcall %}
+
+      {% endcall %}
     {% endcall %}
 
   {% endcall %}
